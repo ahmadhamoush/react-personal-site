@@ -8,7 +8,7 @@ const Container = styled.div`
 display: flex ;
 justify-content: space-between ;
 align-items: center ;
-padding: 40px;
+padding: 20px;
 `
 const Logo = styled.h2`
 color: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
@@ -22,11 +22,10 @@ display: none ;
     position:absolute ;
     top:0;
     left:0;
-    height:100%;
+    height:100vh;
     width: 100% ;
-    display:flex ;
+    display: flex ;
     flex-direction:column ;
-    background-color:#1E1E1E ;
 }
 &:checked ~ ul>*{
 margin:10px ;
@@ -48,7 +47,7 @@ font-size:30px ;
    cursor: pointer;
 float: right;
 padding: 40px 20px;
-z-index:1;
+z-index:2;
 display:none;
 
 
@@ -58,14 +57,14 @@ display:block;
 
 
  const HambLine = styled.span`
-background: white;
+ background: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
 display: block;
 height: 2px;
 position: relative;
 width: 24px;
 
 &::before,&::after{
-    background: white;
+    background: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
 content: '';
 display: block;
 height: 100%;
@@ -85,6 +84,8 @@ const NavContainer = styled.ul`
 display:flex;
 justify-content:center;
 align-items:center ;
+background: ${props=>props.isDarkMode ? '#1E1E1E' : 'white'};
+z-index:1;
 
 ${tablet(css`display:none;`)};
 `
@@ -119,8 +120,8 @@ const Nav = ({isDarkMode}) => {
     <Container>
         <Logo isDarkMode = {isDarkMode}>HAMOUSH</Logo>
         <Input id={'menu' }type={'checkbox'}/>
-        <Hamb onClick={()=>setNavToggled(!navToggled)} htmlFor={'menu'}><HambLine /></Hamb>
-        <NavContainer>
+        <Hamb onClick={()=>setNavToggled(!navToggled)} htmlFor={'menu'}><HambLine isDarkMode={isDarkMode} /></Hamb>
+        <NavContainer isDarkMode={isDarkMode}>
             <NavItem isDarkMode={isDarkMode}>Home</NavItem>
             <NavItem isDarkMode={isDarkMode}>About</NavItem>
             <NavItem isDarkMode={isDarkMode}>Projects</NavItem>

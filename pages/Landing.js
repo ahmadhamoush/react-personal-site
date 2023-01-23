@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 import Nav from '../components/Nav'
-import image from '../images/me.png'
+import Terminal from '../components/Terminal'
 import {BsInstagram} from 'react-icons/bs'
 import {BsGithub} from 'react-icons/bs'
 import {BsLinkedin} from 'react-icons/bs'
@@ -56,20 +56,6 @@ const Header = styled.h1`
 font-size:50px;
 color: ${props=> props.isDarkMode ? 'white' : '#1E1E1E'};
 font-weight:bold;`
-
-const Image = styled.img`
-object-fit: cover ;
-width:400px;
-${tablet(css`
-border-radius: 50px ;
-width:300px;
-   `)};
-
- ${mobile(css`
-width:200px;
-   `)};
-
-`
 
 const Button = styled.button`
 cursor: pointer;
@@ -127,7 +113,7 @@ const Landing = ({isDarkMode}) => {
         </Icons>
         </Left>
         <Right>
-        <Image src={image}/>
+        <Terminal />
         </Right>
        </LandingContainer>
     </Container>

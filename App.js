@@ -11,10 +11,10 @@ function App() {
   return (
     <div>
       <DarkModeSwitch
-      style={{ marginBottom: '2rem', position:'absolute', right:'70px', top:'200px'}}
+      style={{ marginBottom: '2rem', position:'absolute', right:'30px', top:'100px',zIndex:1}}
       checked={isDarkMode}
       onChange={()=>setDarkMode(!isDarkMode)}
-      size={60}
+      size={50}
     />
      <Landing isDarkMode={isDarkMode} />
       <Projects isDarkMode={isDarkMode} />
