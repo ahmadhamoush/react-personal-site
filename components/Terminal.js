@@ -2,12 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { tablet,mobile } from '../devices'
 import { css } from 'styled-components'
+import Typewriter from 'typewriter-effect';
 
 const Container = styled.div`
 position:relative ;
 margin:20px;
 width:500px;
-height: 350px ;
+min-height: 350px ;
+height:auto;
 border-radius: 20px;
 background-color: white ;
 box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px 0px, rgba(0, 0, 0, 0.22) 0px 15px 12px 0px;
@@ -61,22 +63,26 @@ height:25px;
 background-color:#75BEC8;
 border-radius:10px ;
 `
-const About = styled.p`
-margin-top:5px ;
+const TerminalContent = styled.div`
+position:relative ;
+padding-top:30px;
+padding-bottom: 10px ;
 color:#75BEC8;
 font-weight:bold ;
 font-size:15px;
+text-align:left ;
+margin:5px;
+font-size: 12px ;
 `
 const Terminal = () => {
-
   
 
 var txt = [
   "FORCE: XX0022. ENCYPT://000.222.2345",
   "TRYPASS: ********* AUTH CODE: ALPHA GAMMA: 1___ PRIORITY 1",
   "RETRY: REINDEER FLOTILLA",
-  "Z:> /FALKEN/GAMES/TICTACTOE/ EXECUTE -PLAYERS 0",
-  "================================================",
+  "Z:> /HAMOUSH/DOCUMENTS/DATA/ EXECUTE -DEV 0",
+  "============================================",
   "Priority 1 // local / scanning...",
   "scanning ports...",
   "BACKDOOR FOUND (23.45.23.12.00000000)",
@@ -117,15 +123,21 @@ var txt = [
         </ToolBar>
         <Bar />
        
-        {
-            txt.map(item=>{
-                return(
-                    <About>
-                    {item}
-                </About>
-                )   
-            })
-        }
+   
+      <TerminalContent>
+      <Typewriter
+  onInit={(typewriter) => {
+    txt.map(item=>{
+        typewriter.typeString(item + `<br/>`)
+      .callFunction(() => {
+        console.log('All strings were deleted');
+      })
+      .start();
+    })
+  }}
+/>
+      </TerminalContent>
+                    
         </Container>
   )
 }
