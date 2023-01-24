@@ -2,6 +2,14 @@ import img1 from './images/skills/js.webp'
 import img2 from './images/skills/ts.webp'
 import img3 from './images/skills/java.webp'
 import img4 from './images/skills/python.webp'
+import img5 from './images/skills/react.webp'
+import img6 from './images/skills/html.jpg'
+import img7 from './images/skills/css.webp'
+import img8 from './images/skills/angular.webp'
+import img9 from './images/skills/bs.png'
+import img10 from './images/skills/mongo.webp'
+import img11 from './images/skills/node.webp'
+import img12 from './images/skills/sql.webp'
 
 const programming = [{
         id: 0,
@@ -26,37 +34,37 @@ const programming = [{
     },
 ]
 const frontend = [{
-        img: '../images/skills/react.webp',
+        img: img5,
         level: 'Advanced'
     },
     {
-        img: '../images/skills/html.jpg',
+        img: img6,
         level: 'Advanced'
     },
     {
-        img: '../images/skills/css.webp',
+        img: img7,
         level: 'Advanced'
     },
     {
-        img: '../images/skills/angular.webp',
+        img: img8,
         level: 'Intermediate'
     },
     {
-        img: '../images/skills/bs.png',
+        img: img9,
         level: 'Intermediate'
     },
 ]
 
 const backend = [{
-        img: '../images/skills/mongo.webp',
+        img: img10,
         level: 'Advanced'
     },
     {
-        img: '../images/skills/node.webp',
+        img: img11,
         level: 'Advanced'
     },
     {
-        img: '../images/skills/sql.webp',
+        img: img12,
         level: 'Intermediate'
     },
 ]

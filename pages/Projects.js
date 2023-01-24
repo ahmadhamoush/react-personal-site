@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styled from 'styled-components'
@@ -24,6 +24,7 @@ flex-wrap:wrap ;
 justify-content: center ;
 align-items: center ;
 `
+
 const Header =styled.h1`
 font-size:30px;
 padding:20px 50px ;
@@ -33,17 +34,50 @@ color: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
 
 const Projects = ({isDarkMode}) => {
 
-  
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(()=>{
+    if(window.innerWidth<768){
+      setIsMobile(true)
+      console.log(isMobile)
+    }
+    else if(window.innerWidth>768){
+      setIsMobile(false)
+      console.log(isMobile)
+
+    }
+  }, [isMobile])
   return (
     <Container isDarkMode ={isDarkMode}>
         <Header isDarkMode ={isDarkMode}>Projects</Header>
-        <Carousel  showThumbs={false} infiniteLoop>
-      
-       {images.map((img)=> {return (<Cards><Card image={img}/></Cards>)})} 
-      
 
+        <Carousel showThumbs={false} infiniteLoop>
+        {isMobile && images.map((img)=>  
+        (
+         
+          <Cards isMobile={isMobile}><Card image={img}/></Cards>
+          
+       )) 
+        }
         </Carousel>
+    
+      {!isMobile && (
+         <Carousel showThumbs={false} infiniteLoop>
+        <Cards isMobile={isMobile}>
+        <Card image={img1}/>
+        <Card image={img2}/>
+        <Card image={img3}/>
+        </Cards>
+        <Cards isMobile={isMobile}>
+        <Card image={img4}/>
+        <Card image={img5}/>
+        <Card image={img6}/>
+        </Cards>
+        </Carousel >
+    
+        )}
+
+        <br />
         <Header isDarkMode ={isDarkMode}>Upcoming Projects</Header>
         <Cards>
         <Card image={img7}/>

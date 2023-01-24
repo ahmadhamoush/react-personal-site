@@ -8,7 +8,7 @@ const Container = styled.div`
 display: flex ;
 justify-content: space-between ;
 align-items: center ;
-padding: 20px;
+padding: 30px;
 `
 const Logo = styled.h2`
 color: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
