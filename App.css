@@ -12,7 +12,6 @@
 
 .carousel .control-prev.control-arrow:before {
     border-right-color: #75BEC8 !important;
-    filter: saturate(100%);
 }
 
 .carousel .control-dots .dot.selected,

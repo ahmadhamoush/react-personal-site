@@ -1,31 +1,33 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { AnimationOnScroll } from 'react-animation-on-scroll';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { mobile, tablet } from '../devices'
 import skills from '../skills-data'
 
-const Container = styled.div`
+const Container = styled.div `
 padding:20px;
 background-color: ${props=> props.isDarkMode ? '#1E1E1E' : 'white'};
 `
-const Header =styled.h1`
+const Header = styled.h1 `
 font-size:30px;
 padding:20px 50px ;
 text-align: center ;
 color: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
 `
-const SkillHeader =styled.h2`
+const SkillHeader = styled.h2 `
 font-size:20px;
 padding:20px 50px ;
 text-align: center ;
 color: ${props=>props.isDarkMode ? 'white' : '#1E1E1E'};
 `
-const Circles = styled.div`
+const Circles = styled.div `
 display:flex;
 justify-content:center;
 align-items:center;
 flex-wrap:wrap;`
 
-const Circle = styled.div`
+const Circle = styled.div `
 background-image: url(${props=>props.bg}) ;
 width:120px;
 height:120px;
@@ -65,7 +67,10 @@ const Skills = ({isDarkMode}) => {
         <Circles>
            {skills[0].map(item=>{
             return(
-                <Circle key={item.id} bg={item.img} />
+              <AnimationOnScroll animateIn="animate__rollIn">
+                  <Circle key={item.id} bg={item.img} />
+             </AnimationOnScroll>
+          
             )
            })}
         </Circles>
@@ -73,7 +78,9 @@ const Skills = ({isDarkMode}) => {
         <Circles>
            {skills[1].map(item=>{
             return(
-                <Circle key={item.id} bg={item.img} />
+              <AnimationOnScroll animateIn="animate__rollIn">
+              <Circle key={item.id} bg={item.img} />
+         </AnimationOnScroll>
             )
            })}
         </Circles>
@@ -81,7 +88,9 @@ const Skills = ({isDarkMode}) => {
         <Circles>
            {skills[2].map(item=>{
             return(
-                <Circle key={item.id} bg={item.img} />
+              <AnimationOnScroll animateIn="animate__rollIn">
+              <Circle key={item.id} bg={item.img} />
+         </AnimationOnScroll>
             )
            })}
         </Circles>

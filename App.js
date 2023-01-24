@@ -4,6 +4,7 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import Landing from './pages/Landing';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
+import Contact from './pages/Contact';
 
 function App() {
   const [isDarkMode, setDarkMode] = useState(true);
@@ -17,9 +18,11 @@ function App() {
       onChange={()=>setDarkMode(!isDarkMode)}
       size={50}
     />
+  
      <Landing isDarkMode={isDarkMode} />
       <Projects isDarkMode={isDarkMode} />
       <Skills isDarkMode={isDarkMode} />
+      <Contact isDarkMode={isDarkMode} />
     </div>
   );
 }

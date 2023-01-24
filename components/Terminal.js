@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { tablet,mobile } from '../devices'
+import { tablet, mobile } from '../devices'
 import { css } from 'styled-components'
 import Typewriter from 'typewriter-effect';
 
-const Container = styled.div`
+const Container = styled.div `
 position:relative ;
 margin:20px;
 width:500px;
@@ -18,7 +18,7 @@ width:350px;
    `)};
 
  ${mobile(css`
-width:250px;
+width:330px;
    `)};
 
 `

@@ -1,13 +1,15 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import "animate.css/animate.min.css";
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 import Nav from '../components/Nav'
 import Terminal from '../components/Terminal'
-import {BsInstagram} from 'react-icons/bs'
-import {BsGithub} from 'react-icons/bs'
-import {BsLinkedin} from 'react-icons/bs'
+import { BsInstagram } from 'react-icons/bs'
+import { BsGithub } from 'react-icons/bs'
+import { BsLinkedin } from 'react-icons/bs'
 import { tablet, mobile } from '../devices'
 
-const Container = styled.div`
+const Container = styled.div `
 background-color: ${props=> props.isDarkMode ? '#1E1E1E' : 'white'};
 display:flex;
 flex-direction:column ;
@@ -17,7 +19,7 @@ text-align: center ;
 transition:0.5s ease-in-out;
 
 `
-const LandingContainer = styled.div`
+const LandingContainer = styled.div `
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -99,6 +101,7 @@ const Landing = ({isDarkMode}) => {
     <Container isDarkMode = {isDarkMode}>
         <Nav isDarkMode = {isDarkMode} /> 
        <LandingContainer>
+       <AnimationOnScroll initiallyVisible={true}  duration={3} animateIn="animate__fadeIn">
        <Left>
        <TopLeft>
        <Header isDarkMode = {isDarkMode}>
@@ -111,9 +114,14 @@ const Landing = ({isDarkMode}) => {
         <BsGithub />
         <BsLinkedin />
         </Icons>
+       
         </Left>
+        </AnimationOnScroll>
         <Right>
+        <AnimationOnScroll initiallyVisible={true} animateIn="animate__rollIn">
         <Terminal />
+      </AnimationOnScroll>
+  
         </Right>
        </LandingContainer>
     </Container>

@@ -1,5 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import { Carousel } from 'react-responsive-carousel';
+import "animate.css/animate.min.css";
+import { AnimationOnScroll } from 'react-animation-on-scroll';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styled from 'styled-components'
 import Card from '../components/Card'
@@ -55,7 +57,12 @@ const Projects = ({isDarkMode}) => {
         {isMobile && images.map((img)=>  
         (
          
-          <Cards isMobile={isMobile}><Card image={img}/></Cards>
+          <Cards isMobile={isMobile}>
+            <AnimationOnScroll animateIn="animate__bounceIn">
+            <Card image={img}/>
+      </AnimationOnScroll>
+
+            </Cards>
           
        )) 
         }
@@ -64,14 +71,26 @@ const Projects = ({isDarkMode}) => {
       {!isMobile && (
          <Carousel showThumbs={false} infiniteLoop>
         <Cards isMobile={isMobile}>
-        <Card image={img1}/>
-        <Card image={img2}/>
-        <Card image={img3}/>
+        <AnimationOnScroll animateIn="animate__bounceIn">
+            <Card image={img1}/>
+      </AnimationOnScroll>
+      <AnimationOnScroll animateIn="animate__bounceIn">
+            <Card image={img2}/>
+      </AnimationOnScroll>
+      <AnimationOnScroll animateIn="animate__bounceIn">
+            <Card image={img3}/>
+      </AnimationOnScroll>
         </Cards>
         <Cards isMobile={isMobile}>
-        <Card image={img4}/>
-        <Card image={img5}/>
-        <Card image={img6}/>
+        <AnimationOnScroll animateIn="animate__bounceIn">
+            <Card image={img4}/>
+      </AnimationOnScroll>
+      <AnimationOnScroll animateIn="animate__bounceIn">
+            <Card image={img5}/>
+      </AnimationOnScroll>
+      <AnimationOnScroll animateIn="animate__bounceIn">
+            <Card image={img6}/>
+      </AnimationOnScroll>
         </Cards>
         </Carousel >
     
@@ -80,8 +99,12 @@ const Projects = ({isDarkMode}) => {
         <br />
         <Header isDarkMode ={isDarkMode}>Upcoming Projects</Header>
         <Cards>
-        <Card image={img7}/>
-        <Card image={img8}/>
+        <AnimationOnScroll animateIn="animate__bounceIn">
+            <Card image={img7}/>
+      </AnimationOnScroll>
+      <AnimationOnScroll animateIn="animate__bounceIn">
+            <Card image={img8}/>
+      </AnimationOnScroll>
         </Cards>
     </Container>
   )
