@@ -9,7 +9,8 @@ background-repeat: no-repeat;
 background-position:center;
 background-size:cover;
 border-radius:20px;
-margin: 30px ;
+margin: 50px 10px ;
+
 
 cursor: pointer;
 transition: 0.5s ease-in-out ;

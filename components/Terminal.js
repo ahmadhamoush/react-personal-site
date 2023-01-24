@@ -132,6 +132,7 @@ var txt = [
       .callFunction(() => {
         console.log('All strings were deleted');
       })
+      .changeDelay('1000')
       .start();
     })
   }}
